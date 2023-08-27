@@ -3,5 +3,5 @@ account_ID = "101-001-26676351-001"
 currency_pair = "BTC"
 chart_granularity = '5m'
 timeframe = 'm'
-timeInterval = '5'
+timeInterval = 5
 

@@ -101,7 +101,7 @@ if __name__ == "__main__":
 
     scheduler = BlockingScheduler()
     if timeframe == 'm':
-        scheduler.add_job(tradeIt, "interval", minutes= timeInterval)
+        scheduler.add_job(tradeIt, "interval", minutes=timeInterval)
     elif timeframe == 'h':
         scheduler.add_job(tradeIt, "interval", hours=timeInterval)
     elif timeframe == 'd':
