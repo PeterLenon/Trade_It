@@ -8,7 +8,6 @@ from oandapyV20 import API
 import oandapyV20.endpoints.orders as orders
 from AccountConfig import API_access_token, account_ID, currency_pair, chart_granularity, timeframe, timeInterval
 from apscheduler.schedulers.blocking import BlockingScheduler
-import time
 
 
 def fetchData(trading_instrument, candles_back, interval):  # pass string , int, string # 'EURUSD-X', 200, '15m'
