@@ -4,7 +4,7 @@ import numpy as np
 
 
 # if signal > 0(+ve) then its a buy signal else if a signal < 0 the its a sell signal else do nothing
-def Buy_or_Sell_Signal(dataframe):
+def Buy_or_Sell_Signal(dataframe, support_and_resistance_lines):
     def nearest_supp_and_res_lines(candle):
         Open = np.array(candle.Open)[0]
         Close = np.array(candle.Close)[0]
@@ -38,6 +38,7 @@ def Buy_or_Sell_Signal(dataframe):
 
     support_and_resistance_lines = get_Support_and_Resistance(dataframe=dataframe,
                                                               optimal_cluster_size=choose_num_of_clusters(dataframe))
+    support_and_resistance_lines.sort()
     candle_stick_patterns = pattern_Signals(dataframe)
     sentiment_index = sum(signal for signal in candle_stick_patterns)
     last_candle = getLastCandle(dataframe)
