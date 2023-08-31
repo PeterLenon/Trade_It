@@ -39,10 +39,10 @@ The script will continuously run at intervals determined by the chart granularit
 The bot will automatically set stop losses and take profit points depending on whether it is in a sell or buy state.
 The bot will continuously search for market entry and exit points.
 
-CandleStick_Patterns.py - contains functions to determine common candlestick patterns that can be used to find market entry and exit points
-SignalGenerator.py - contains functions that allow the bot to determine whether to buy, sell or not take any action
-Support_and_Resistance.py - contains functions that allow the bot to determine  accurate price action points and use those areas as potential market entry or exit points
-Main.py - is the execution file, connecting to the OANDA account to retrieve data on the traded instrument and execute trades
+- CandleStick_Patterns.py - contains functions to determine common candlestick patterns that can be used to find market entry and exit points
+- SignalGenerator.py - contains functions that allow the bot to determine whether to buy, sell or not take any action
+- Support_and_Resistance.py - contains functions that allow the bot to determine  accurate price action points and use those areas as potential market entry or exit points
+- Main.py - is the execution file, connecting to the OANDA account to retrieve data on the traded instrument and execute trades
 
 ## Contributing
 
