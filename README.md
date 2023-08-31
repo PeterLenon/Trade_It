@@ -34,10 +34,15 @@ Python library - datetime
 ## Usage
 
 The config file contains information relating to the chart you are trading on, the API access key to the account, the account ID and the currency pair/ trading instrument that the user wants to trade.
-Set those up and press run. 
+Set those up and run Main.py 
 The script will continuously run at intervals determined by the chart granularity set by the chart being traded on.
 The bot will automatically set stop losses and take profit points depending on whether it is in a sell or buy state.
-The bot will continuously search for market entry and exit points. 
+The bot will continuously search for market entry and exit points.
+
+CandleStick_Patterns.py - contains functions to determine common candlestick patterns that can be used to find market entry and exit points
+SignalGenerator.py - contains functions that allow the bot to determine whether to buy, sell or not take any action
+Support_and_Resistance.py - contains functions that allow the bot to determine  accurate price action points and use those areas as potential market entry or exit points
+Main.py - is the execution file, connecting to the OANDA account to retrieve data on the traded instrument and execute trades
 
 ## Contributing
 
