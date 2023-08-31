@@ -1,6 +1,6 @@
 # Trade_It!
 Trading Bot for Cryptocurrencies, Indices, Funds, Forex etc 
-# Welcome to the Trade_It repository! This is a Trading Bot. Whether you're a developer, contributor, or just curious, we're excited to have you here.
+# Welcome to the Trade_It repository!
 
 ## Table of Contents
 
