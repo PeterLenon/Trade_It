@@ -17,13 +17,14 @@ These instructions will help you get a copy of the project up and running on you
 
 ### Prerequisites
 
-Python (any version -- hopefully the latest version at the time of reading this file)
-Python library - PANDAS
-Python library - Sklearn
-Python library - OANDA API and its related packages
-Python library - NumPy
-Python library - Yfinance
-Python library - datetime
+- Python (any version -- hopefully the latest version at the time of reading this file)
+- Python library - PANDAS
+- Python library - Sklearn
+- Python library - OANDA API and its related packages
+- Python library - NumPy
+- Python library - Yfinance
+- Python library - datetime
+  
 ### Installation
 
 1. Choose and install the code Editor of your choice
