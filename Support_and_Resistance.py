@@ -16,7 +16,9 @@ def choose_num_of_clusters(dataframe):
     optimal_num_of_clusters = max(x for x in possible_clusters)  # the most optimal number pf clusters
     return possible_clusters.index(optimal_num_of_clusters)
 
-def get_Support_and_Resistance(dataframe, optimal_cluster_size):
+def get_Support_and_Resistance(dataframe):
+    optimal_cluster_size = choose_num_of_clusters(dataframe)
+
     OpenPrices = np.array(dataframe.Open.copy())
     ClosePrices = np.array(dataframe.Close.copy())
     open_and_closeprices = OpenPrices + ClosePrices  # Sum of Open and Close prices is unlikely to be meaningful

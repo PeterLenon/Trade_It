@@ -45,9 +45,6 @@ def Tweezer_Bottom_and_Top(dataframe):
             return -1
     return 0
 
-def getLastCandle(dataframe):
-    return dataframe.iloc[-1:].copy()
-
 def pattern_Signals(dataframe):
     signals = [Engulfing_Bar(dataframe), DragonFly_Doji(dataframe), Morning_or_Evening_Star(dataframe), Tweezer_Bottom_and_Top(dataframe)]
     return signals

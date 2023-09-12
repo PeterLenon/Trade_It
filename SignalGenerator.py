@@ -1,5 +1,4 @@
-from CandleStick_Patterns import pattern_Signals, getLastCandle
-from Support_and_Resistance import get_Support_and_Resistance, choose_num_of_clusters
+from CandleStick_Patterns import pattern_Signals
 import numpy as np
 
 
@@ -35,13 +34,10 @@ def Buy_or_Sell_Signal(dataframe, support_and_resistance_lines):
         lines = [res, sup]
         return lines
 
-
-    support_and_resistance_lines = get_Support_and_Resistance(dataframe=dataframe,
-                                                              optimal_cluster_size=choose_num_of_clusters(dataframe))
     support_and_resistance_lines.sort()
     candle_stick_patterns = pattern_Signals(dataframe)
     sentiment_index = sum(signal for signal in candle_stick_patterns)
-    last_candle = getLastCandle(dataframe)
+    last_candle = dataframe.iloc[-1:].copy()
     supp_and_res = nearest_supp_and_res_lines(last_candle)
     if sentiment_index > 0:
         support = supp_and_res[0]

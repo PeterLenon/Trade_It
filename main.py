@@ -8,20 +8,28 @@ from oandapyV20 import API
 import oandapyV20.endpoints.orders as orders
 from AccountConfig import API_access_token, account_ID, currency_pair, chart_granularity, timeframe, timeInterval
 from apscheduler.schedulers.blocking import BlockingScheduler
+from Support_and_Resistance import get_Support_and_Resistance
 
 
 def fetchData(trading_instrument, candles_back, interval):  # pass string , int, string # 'EURUSD-X', 200, '15m'
     timeframe = interval[len(interval) - 1]
     interval = int(interval[:-1])
     end = datetime.today().now()
+    start = end - timedelta(minutes=interval * candles_back)
     if timeframe == 'd':
         start = end - timedelta(days=interval * candles_back)
-    data = yf.download(str(trading_instrument), start=start, end=end)
+    if timeframe == 'h':
+        start = end - timedelta(hours=interval * candles_back)
+    data = yf.download(str(trading_instrument), start=start, end= end)
     dataframe = pd.DataFrame(data)
     return dataframe
 
 
 if __name__ == "__main__":
+
+    data = fetchData(currency_pair, 20000, chart_granularity)
+    print(data.head(5))
+    support_and_resistance_lines = get_Support_and_Resistance(data)
     def tradeIt():
         def takeProfit(buy, sell):
             candle = data.iloc[-1:]
@@ -57,11 +65,10 @@ if __name__ == "__main__":
                 return np.array(candle['High'])[0] + 2 * (
                     abs(np.array(candle['Close'])[0] - np.array(candle['Open'])[0]))
 
-        support_and_resistance_lines = []
+
         Buy = False
         Sell = False
         Neither = False
-        data = fetchData(currency_pair, 200, chart_granularity)
         signal = Buy_or_Sell_Signal(data, support_and_resistance_lines)
         if signal == 1:
             Buy = True
