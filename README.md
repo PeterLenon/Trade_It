@@ -1,5 +1,3 @@
-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
-
 # Trade_It!
 Trading Bot for Cryptocurrencies, Indices, Funds, Forex etc 
 # Welcome to the Trade_It repository!
